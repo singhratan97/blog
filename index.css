@@ -1,0 +1,69 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+
+p {
+    margin: 0;
+}
+
+.page-title {
+    font-size: 4rem;
+    background-image:url("imgs/smoke.jpg"), linear-gradient(to left, rgb(180, 0, 0), rgb(0, 0, 132));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0;
+    padding: 3.90625em 0;
+    letter-spacing: 5px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 7px;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-container {
+    margin-top: -35px;
+}
+
+.post:hover,
+.post:focus {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.post {
+    display: inline-block;
+    background: linear-gradient(45deg, blue, red);
+    padding: 50px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: capitalize;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+.footer {
+    background: rgba(156, 31, 31,1);
+    color: white;
+    padding: 100px 0;
+    margin: 10px 0 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
