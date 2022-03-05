@@ -2,12 +2,15 @@ body {
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     margin: 0;
-    height: 100vh;
-    position: relative;
 }
 
 p {
     margin: 0;
+}
+
+.content-wrapper {
+    min-height: 100vh;
+    position: relative;
 }
 
 .page-title {
@@ -36,6 +39,7 @@ p {
 
 .post-container {
     margin-top: -35px;
+    padding-bottom: 200px;
 }
 
 .post:hover,
@@ -75,6 +79,7 @@ p {
 
     .post-container {
         margin-top: 15px;
+        padding-bottom: 0;
     }
 
     .footer {
@@ -82,7 +87,7 @@ p {
         bottom: unset;
     }
 
-    body {
+    .content-wrapper {
         min-height: fit-content;
     }
 
