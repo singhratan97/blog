@@ -32,3 +32,23 @@ body {
     font-size: 2rem;
     font-family: 'Dancing Script', cursive;
 }
+
+@media (max-width: 500px) {
+    .container {
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    .post {
+        padding: 0 10px;
+    }
+
+    .post-title {
+        font-size:2rem;
+    }
+
+    .post{
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
+}
