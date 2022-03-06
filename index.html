@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="content-wrapper">
+        <input id="checkbox" type="checkbox" >
         <h1 class="page-title">My Blog Site</h1>
         <div class="container container-flex post-container">
             <p><a href="post-1.html" class="post">my first blog</a></p>
@@ -24,5 +25,29 @@
             </p>
         </div>
     </div>
+
+    <script>
+        const cb = document.getElementById("checkbox")
+        const pageTitle = document.getElementsByClassName("page-title")[0]
+        const footer = document.getElementsByClassName("footer")[0]
+        const posts = document.getElementsByClassName("post")
+        cb.addEventListener("change", function() {
+            console.log(cb.checked)
+            if(cb.checked) {
+                    pageTitle.classList.add("page-title-light")
+                    footer.classList.add("footer-light")
+                    for(post of posts) {
+                        post.classList.add("post-light")
+                    }
+            } else {
+                pageTitle.classList.remove("page-title-light")
+                    footer.classList.remove("footer-light")
+                    for(post of posts) {
+                        post.classList.remove("post-light")
+                    }    
+            }
+        })
+        
+    </script>
 </body>
-</html>
+</htm

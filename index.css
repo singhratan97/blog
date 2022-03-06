@@ -8,6 +8,12 @@ p {
     margin: 0;
 }
 
+#checkbox {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 .content-wrapper {
     min-height: 100vh;
     position: relative;
@@ -15,7 +21,7 @@ p {
 
 .page-title {
     font-size: 4rem;
-    background-image:url("imgs/smoke.jpg"), linear-gradient(to left, rgb(180, 0, 0), rgb(0, 0, 132));
+    background:url("imgs/smoke.jpg"), linear-gradient(to left, rgb(180, 0, 0), rgb(0, 0, 132));
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
@@ -23,6 +29,11 @@ p {
     margin: 0;
     padding: 3.90625em 0;
     letter-spacing: 5px;
+}
+
+.page-title-light {
+    background-image:linear-gradient(45deg, #C0C0C0, #fff);
+    color: #000;
 }
 
 .container {
@@ -63,6 +74,13 @@ p {
     margin-bottom: 50px;
 }
 
+.post-light {
+    background:linear-gradient(45deg, #C0C0C0, #fff);
+    box-shadow: 0 0 20px 5px black;
+    color: #000;
+}
+
+
 .footer {
     background: rgba(156, 31, 31,1);
     color: white;
@@ -73,6 +91,11 @@ p {
     position: absolute;
     width: 100%;
     bottom: 0;
+}
+
+.footer-light {
+    background-image:linear-gradient(45deg, #C0C0C0, #fff);
+    color: #000;
 }
 
 @media (max-width: 850px) {
