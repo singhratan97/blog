@@ -11,7 +11,9 @@
 </head>
 <body>
     <div class="content-wrapper">
-        <input id="checkbox" type="checkbox" >
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
         <h1 class="page-title">My Blog Site</h1>
         <div class="container container-flex post-container">
             <p><a href="post-1.html" class="post">my first blog</a></p>
@@ -27,26 +29,126 @@
     </div>
 
     <script>
-        const cb = document.getElementById("checkbox")
+        let darkmode = localStorage.getItem("darkmode")
+        const outerDiv = document.getElementsByClassName("outer")[0]
+        const innerDiv = document.getElementsByClassName("inner")[0]
         const pageTitle = document.getElementsByClassName("page-title")[0]
         const footer = document.getElementsByClassName("footer")[0]
         const posts = document.getElementsByClassName("post")
-        cb.addEventListener("change", function() {
-            console.log(cb.checked)
-            if(cb.checked) {
+
+        if(darkmode == null)
+        darkmode = false
+        else
+        darkmode = localStorage.getItem("darkmode")
+
+        darkmode = (darkmode === 'true')
+
+        function darkModeEnable() {
+            innerDiv.classList.add("position")
+            pageTitle.classList.add("page-title-light")
+            innerDiv.classList.remove("red")
+            footer.classList.add("footer-light")
+                for(post of posts) {
+                    post.classList.add("post-light")
+                }
+        }
+
+        function darkModeDisable() {
+            innerDiv.classList.remove("position")
+            pageTitle.classList.remove("page-title-light")
+            innerDiv.classList.add("red")
+            footer.classList.remove("footer-light")
+            for(post of posts) {
+                post.classList.remove("post-light")
+            }    
+        }
+
+        if(darkmode){
+            darkModeEnable()
+        }
+        else{
+            darkModeDisable()
+        }
+
+        localStorage.setItem("darkmode",darkmode)
+
+        outerDiv.addEventListener("click",function(){
+            if(!darkmode){
+                darkModeEnable()
+                darkmode = !darkmode
+            }
+            else{
+                darkModeDisable()
+                darkmode = !darkmode
+            }
+            localStorage.setItem("darkmode",darkmode) 
+        })
+
+        /*
+
+        console.log(document.styleSheets)
+        // document.styleSheets[1].insertRule('input[type="checkbox"]:checked::before {left: 30px}',17)
+        // document.styleSheets[1].insertRule('input[type="checkbox"]::before {left: 0}',16)
+
+        if(localStorage.getItem("checked") == null)
+        {
+            //console.log(localStorage.getItem("checked"))
+            checked = false
+            //console.log(checked)
+        }
+        
+        else
+        {
+            checked = JSON.parse(localStorage.getItem("checked"))
+            document.styleSheets[1].insertRule('input[type="checkbox"]:checked::before {background-image:linear-gradient(to left, rgb(255, 255, 255), rgb(0, 0, 0)),left: 30px}',16)
+            //console.log(checked)
+        }
+
+        if(checked) {
+            // document.styleSheets[1].deleteRule(16)
+            //         document.styleSheets[1].insertRule('input[type="checkbox"]:checked::before {left: 30px}',17)
+                    // cb.checkbox = checked
+                    pageTitle.classList.add("page-title-light")
+                    footer.classList.add("footer-light")
+                        for(post of posts) {
+                            post.classList.add("post-light")
+                        }
+                     } else {
+                        // cb.checkbox = checked
+                        // document.styleSheets[1].deleteRule(17)
+                        // document.styleSheets[1].insertRule('input[type="checkbox"]::before {left: 0}',16)
+                       pageTitle.classList.remove("page-title-light")
+                       footer.classList.remove("footer-light")
+                            for(post of posts) {
+                                post.classList.remove("post-light")
+                            }    
+            }
+        cb.addEventListener("click", function() {
+            //console.log(checked)
+            checked = !checked
+            if(checked) {
+                // cb.checkbox = checked
+                // document.styleSheets[1].deleteRule(16)
+                //  document.styleSheets[1].insertRule('input[type="checkbox"]:checked::before {left: 30px}',17)
                     pageTitle.classList.add("page-title-light")
                     footer.classList.add("footer-light")
                     for(post of posts) {
                         post.classList.add("post-light")
                     }
             } else {
+                // cb.checkbox = checked
+                // document.styleSheets[1].deleteRule(17)
+                //  document.styleSheets[1].insertRule('input[type="checkbox"]::before {left: 0}',16)
                 pageTitle.classList.remove("page-title-light")
                     footer.classList.remove("footer-light")
                     for(post of posts) {
                         post.classList.remove("post-light")
                     }    
             }
-        })
+            localStorage.setItem("checked", JSON.stringify(checked))
+        })*/
+
+
         
     </script>
 </body>
